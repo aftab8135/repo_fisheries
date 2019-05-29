@@ -1,0 +1,242 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ApplicantMaster.master.cs" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Applicant Panel | Fisheries Department</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <!--STYLESHEET-->
+    <!--=================================================-->
+    <!--Roboto Slab Font [ OPTIONAL ] -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,700italic,300,700,500italic,400" rel="stylesheet" />
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <!--Jasmine Stylesheet [ REQUIRED ]-->
+    <link href="../css/style.css" rel="stylesheet" />
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link href="../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!--Switchery [ OPTIONAL ]-->
+    <link href="../plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <link href="../plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+    <!--Bootstrap Validator [ OPTIONAL ]-->
+    <link href="../plugins/bootstrap-validator/bootstrapValidator.min.css" rel="stylesheet" />
+    <!--jVector Map [ OPTIONAL ]-->
+    <link href="../plugins/jvectormap/jquery-jvectormap.css" rel="stylesheet" />
+    <!--Morris.js [ OPTIONAL ]-->
+    <link href="../plugins/morris-js/morris.min.css" rel="stylesheet" />
+    <!--Bootstrap Table [ OPTIONAL ]-->
+    <link href="../plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="../plugins/datatables/extensions/Responsive/css/dataTables.responsive.css" rel="stylesheet" />
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="../css/demo/jquery-steps.min.css" rel="stylesheet" />
+    <!--Chosen [ OPTIONAL ]-->
+    <link href="../plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="../plugins/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet" />
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="../css/demo/jasmine.css" rel="stylesheet" />
+    <!--SCRIPT-->
+    <!--=================================================-->
+    <!--Page Load Progress Bar [ OPTIONAL ]-->
+    <%--   <link href="../plugins/pace/pace.min.css" rel="stylesheet" />
+    <script src="../plugins/pace/pace.min.js"></script>--%>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="container" class="effect mainnav-full">
+        <form action="#" role="form" id="form" runat="server">
+            <!--NAVBAR-->
+            <!--===================================================-->
+            <header id="navbar">
+                <div id="navbar-container" class="boxed">
+                    <!--Brand logo & name-->
+                    <!--================================-->
+                    <div class="navbar-header">
+                        <a href="../Administrator/Dashboard.aspx" class="navbar-brand ">
+                            <img src="../img/Uttar-Pradesh-govt.png" alt="Fisheries Department" class="logo" />
+                            <div class="brand-title">
+                                <span class="brand-text">Scheme Monitoring System & Various MIS Modules </span>
+                                <h5>Fisheris Department, Government Of Uttar Pradesh</h5>
+
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--================================-->
+                    <!--End brand logo & name-->
+                    <!--Navbar Dropdown-->
+                    <!--================================-->
+                    <div class="navbar-content clearfix">
+                       
+                        <ul class="nav navbar-top-links pull-right">
+                            <li id="dropdown-user" class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                    <span class="pull-right">
+                                        <img class="img-circle img-user media-object" src="../img/av1.png" alt="Profile Picture" style="margin-top: 2px" />
+                                    </span>
+                                    <div class="username hidden-xs"><%=Session["Applicantname"]%></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right with-arrow">
+                                    <!-- User dropdown menu -->
+                                    <ul class="head-list">
+                                        <li>
+                                            <a href="#"><i class="fa fa-envelope fa-fw"></i>Change Password </a>
+                                        </li>                                      
+                                        <li>
+                                            <a href="../Default.aspx"><i class="fa fa-sign-out fa-fw"></i>Logout </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End user dropdown-->
+                        </ul>
+                    </div>
+                    <!--================================-->
+                    <!--End Navbar Dropdown-->
+                    <nav class="navbar navbar-default megamenu">
+                        <div class="navbar-header">
+                            <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle">
+                                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- end navbar-header -->
+                        <div id="defaultmenu" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="../Applicant/ApplicantDashboard.aspx">Dashboard </a>
+                                </li>
+                                <li>
+                                    <a href="../Applicant/ApplicantProfile.aspx">View Profile </a>
+                                </li>
+                                <li>
+                                    <a href="../Applicant/ApplicantScheme.aspx">Online Schemes </a>
+                                </li>
+                                <li>
+                                    <a href="../Applicant/GrievanceStatus.aspx">Grievance </a>
+                                </li>
+                                   <%--<li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Machua Awas<b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="../Applicant/frm_Registration.aspx">मछुआ आवास योजनान्तर्गत पंजीकरण</a>
+                                        </li>
+                                        <li>
+                                            <a href="../Applicant/frm_Distribution.aspx">मछुआ दुर्घटना योजनान्तर्गत पंजीकरण</a>
+                                        </li>
+                                        
+                                    </ul>
+                                    <!-- end dropdown-menu -->
+                                </li>--%>
+                              <%--  <li>
+                                    <a href="#">RTI </a>
+                                </li>
+                                <li>
+                                    <a href="#">Downloads </a>
+                                </li>--%>
+                                <li>
+                                    <a href="../Default.aspx">Logout </a>
+                                </li>                                                           
+                            </ul>
+                            <!-- end nav navbar-nav -->
+                        </div>
+                        <!-- end #navbar-collapse-1 -->
+                    </nav>
+                    <!-- end navbar navbar-default megamenu -->
+                </div>
+            </header>
+            <!--===================================================-->
+            <!--END NAVBAR-->
+
+            <div class="boxed">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- FOOTER -->
+            <!--===================================================-->
+            <footer id="footer">            
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="hide-fixed pull-right pad-rgt">Designed & Developed By <a href="#">Marg Software Solutions</a> </div>
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <p class="pad-lft">&#0169; 2018 Fisheries Department</p>
+            </footer>
+            <!--===================================================-->
+            <!-- END FOOTER -->
+            <!-- SCROLL TOP BUTTON -->
+            <!--===================================================-->
+            <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+
+        </form>
+        <!--===================================================-->
+    </div>
+
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+    <!--jQuery [ REQUIRED ]-->
+    <script src="<%=ResolveUrl("~/js/jquery-2.1.1.min.js")%>"></script>
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="<%=ResolveUrl("~/js/bootstrap.min.js")%>"></script>
+    <!--Fast Click [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/fast-click/fastclick.min.js")%>"></script>
+    <!--Jquery Nano Scroller js [ REQUIRED ]-->
+    <script src="<%=ResolveUrl("~/plugins/nanoscrollerjs/jquery.nanoscroller.min.js")%>"></script>
+    <!--Metismenu js [ REQUIRED ]-->
+    <script src="<%=ResolveUrl("~/plugins/metismenu/metismenu.min.js")%>"></script>
+    <!--Switchery [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/switchery/switchery.min.js")%>"></script>
+    <!--parsley [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/parsley/parsley.min.js")%>"></script>
+    <!--Jquery Steps [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/jquery-steps/jquery-steps.min.js")%>"></script>
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-select/bootstrap-select.min.js")%>"></script>
+    <!--Bootstrap Wizard [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js")%>"></script>
+    <!--Masked Input [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/masked-input/bootstrap-inputmask.min.js")%>"></script>
+    <!--Bootstrap Validator [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-validator/bootstrapValidator.min.js")%>"></script>
+    <!--Flot Chart [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.min.js")%>"></script>
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.resize.min.js")%>"></script>
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.spline.js")%>"></script>
+    <script src="<%=ResolveUrl("~/plugins/moment/moment.min.js")%>"></script>
+    <script src="<%=ResolveUrl("~/plugins/moment-range/moment-range.js")%>"></script>
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.tooltip.min.js")%>"></script>
+    <!--Flot Order Bars Chart [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.categories.js")%>"></script>
+    <!--DataTables [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/datatables/media/js/jquery.dataTables.js")%>"></script>
+    <script src="<%=ResolveUrl("~/plugins/datatables/media/js/dataTables.bootstrap.js")%>"></script>
+    <script src="<%=ResolveUrl("~/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js")%>"></script>
+    <!--Morris.js [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/morris-js/morris.min.js")%>"></script>
+    <script src="<%=ResolveUrl("~/plugins/morris-js/raphael-js/raphael.min.js")%>"></script>
+    <!--Easy Pie Chart [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/easy-pie-chart/jquery.easypiechart.min.js")%>"></script>
+    <!--Fullscreen jQuery [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/screenfull/screenfull.js")%>"></script>
+    <!--Form Wizard [ SAMPLE ]-->
+    <script src="<%=ResolveUrl("~/js/demo/index.js")%>"></script>
+    <!--Form Wizard [ SAMPLE ]-->
+    <script src="<%=ResolveUrl("~/js/demo/wizard.js")%>"></script>
+    <!--Form Wizard [ SAMPLE ]-->
+    <script src="<%=ResolveUrl("~/js/demo/form-wizard.js")%>"></script>
+    <script src="<%=ResolveUrl("~/js/demo/tables-datatables.js")%>"></script>
+    <!--Chosen [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/chosen/chosen.jquery.min.js")%>"></script>
+    <!--Bootstrap Datepicker [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-datepicker/bootstrap-datepicker.js")%>"></script>
+    <!--Jasmine Admin [ RECOMMENDED ]-->
+    <script src="<%=ResolveUrl("~/js/scripts.js")%>"></script>
+</body>
+</html>

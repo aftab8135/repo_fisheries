@@ -1,0 +1,428 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DistrictMaster.master.cs" Inherits="MasterPages_DistrictMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>District Panel | Fisheries Department</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <!--STYLESHEET-->
+    <!--=================================================-->
+    <!--Roboto Slab Font [ OPTIONAL ] -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:500,400italic,100,700italic,300,700,500italic,400" rel="stylesheet" />
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="<%=ResolveUrl("~/css/bootstrap.min.css") %>" rel="stylesheet" />
+    <!--Jasmine Stylesheet [ REQUIRED ]-->
+    <link href="<%=ResolveUrl("~/css/style.css") %>" rel="stylesheet" />
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/font-awesome/css/font-awesome.min.css") %>" rel="stylesheet" />
+    <!--Switchery [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/switchery/switchery.min.css") %>" rel="stylesheet" />
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/bootstrap-select/bootstrap-select.min.css") %>" rel="stylesheet" />
+    <!--Bootstrap Validator [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/bootstrap-validator/bootstrapValidator.min.css") %>" rel="stylesheet" />
+    <!--jVector Map [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/jvectormap/jquery-jvectormap.css") %>" rel="stylesheet" />
+    <!--Morris.js [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/morris-js/morris.min.css") %>" rel="stylesheet" />
+    <!--Bootstrap Table [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/datatables/media/css/dataTables.bootstrap.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css") %>" rel="stylesheet" />
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="<%=ResolveUrl("~/css/demo/jquery-steps.min.css") %>" rel="stylesheet" />
+    <!--Dropzone [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/dropzone/dropzone.css") %>" rel="stylesheet" />
+    <!--Chosen [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/chosen/chosen.min.css") %>" rel="stylesheet" />
+    <!--Bootstrap Timepicker [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css") %>" rel="stylesheet" />
+    <!--Bootstrap Datepicker [ OPTIONAL ]-->
+    <link href="<%=ResolveUrl("~/plugins/bootstrap-datepicker/bootstrap-datepicker.css") %>" rel="stylesheet" />
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="<%=ResolveUrl("~/css/demo/jasmine.css") %>" rel="stylesheet" />
+    <!--SCRIPT-->
+
+    <!--=================================================-->
+    <!--Page Load Progress Bar [ OPTIONAL ]-->
+    <%--    <link href="<%=ResolveUrl("~/plugins/pace/pace.min.css") %>" rel="stylesheet" />
+    <script src="<%=ResolveUrl("~/plugins/pace/pace.min.js") %>"></script>--%>
+
+    <link href="<%=ResolveUrl("~/css/demo/jquery.Wload.css") %>" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="container" class="effect mainnav-full">
+        <form id="frmDBTDistrict" runat="server">
+            <!--NAVBAR-->
+            <!--===================================================-->
+            <header id="navbar">
+                <div id="navbar-container" class="fixed">
+                    <!--Brand logo & name-->
+                    <!--================================-->
+                    <div class="navbar-header">
+                        <a href="../DBT/District/Dashboard.aspx" class="navbar-brand ">
+                            <img src="../../img/Uttar-Pradesh-govt.png" alt="Fisheries Department" class="logo" />
+                            <div class="brand-title">
+                                <span class="brand-text">Scheme Monitoring System & Various MIS Modules </span>
+                                <h5>Fisheris Department, Government Of Uttar Pradesh</h5>
+
+                            </div>
+                        </a>
+                    </div>
+                    <!--================================-->
+                    <!--End brand logo & name-->
+                    <!--Navbar Dropdown-->
+                    <!--================================-->
+                    <div class="navbar-content clearfix">
+                        <ul class="nav navbar-top-links pull-right">
+                            <li id="dropdown-user" class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                    <span class="pull-right">
+                                        <img class="img-circle img-user media-object" src="../../img/av1.png" alt="Profile Picture" />
+                                    </span>
+                                    <div class="username hidden-xs">सहायक निदेशक (<%=Session["DistrictName"].ToString() %>)</div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right with-arrow">
+                                    <!-- User dropdown menu -->
+                                    <ul class="head-list">
+                                        <li>
+                                            <a href="#"><i class="fa fa-envelope fa-fw"></i>पासवर्ड बदलें </a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/Default.aspx") %>"><i class="fa fa-sign-out fa-fw"></i>लॉगआउट </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            <!--End user dropdown-->
+                        </ul>
+                    </div>
+                    <!--================================-->
+                    <!--End Navbar Dropdown-->
+                    <nav class="navbar navbar-default megamenu">
+                        <div class="navbar-header">
+                            <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle">
+                                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- end navbar-header -->
+                        <div id="defaultmenu" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+
+                                <li>
+                                    <a href="../../DBT/District/Dashboard.aspx">Dashboard </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="../../District/SchemeStatus.aspx">Online Schemes</a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="../../District/GetAwasYogna.aspx">मछुआ आवास योजना</a></li>
+                                    </ul>
+                                </li>
+                                <%--   <li>
+                                    <a href="../../District/MachuaAwas.aspx">Machua Awas</a>
+                                </li>--%>
+                                <li>
+                                    <a href="../../District/GrievanceStatus.aspx">Grievance</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">D.B.T. <b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="../../DBT/District/frm_Registration.aspx">पंजीकरण करें </a>
+                                        </li>
+                                        <li>
+                                            <a href="../../DBT/District/frm_Distribution.aspx">नया वितरण </a>
+                                        </li>
+                                        <li>
+                                            <a href="../../DBT/District/frm_BillForwarding.aspx">बिल आगे बढ़ाए </a>
+                                        </li>
+                                        <li>
+                                            <a href="../../DBT/District/frm_BillVerificationList.aspx">सत्यापन हेतु भेजे गए बिल </a>
+                                        </li>
+                                        <li>
+                                            <a href="../../DBT/District/frm_DBTBillList.aspx">अनुदान हेतु बिल भुगतान गेट वे </a>
+                                        </li>
+                                        <li>
+                                            <a href="../../DBT/District/frm_Report.aspx">रिपोर्ट</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../DBT/District/frm_DocumentUpdate.aspx">अपडेट डॉक्यूमेंट</a>
+                                        </li>
+                                    </ul>
+                                    <!-- end dropdown-menu -->
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">MPR<b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/frm_BlueRevolution.aspx?Key=1")%>">नीली क्रांति योजना की भौतिकी एवं वित्तीय प्रगति सूचना</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/frm_RKVY.aspx?Key=2")%>">राष्ट्रीय कृषि विकास योजना</a>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a href="#">नीलाम जलाशय की जनपदवार / जलाशायवार सूचना</a>
+                                            <ul class="dropdown-menu">
+
+                                                <li>
+                                                    <a href="<%=ResolveUrl("~/MPR/frmPondMaster.aspx")%>">नीलाम जलाशय की सूचना</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<%=ResolveUrl("~/MPR/frmPondDetails.aspx")%>">नीलाम जलाशय का विवरण</a>
+                                                </li>
+                                            </ul>
+                                            <!-- end dropdown-menu -->
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/MPR_FisheryProductionAllSources.aspx")%>">समस्त श्रोतों से अनुमानित मत्स्य उत्पादन का विवरण</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/frm_SeedDistribution.aspx")%>">समस्त श्रोतों से मत्स्य बीज वितरण</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/frmSeedStock.aspx")%>">समस्त श्रोतों में मत्स्य बीज संचय</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/frm_MachuaAwas.aspx")%>">मछुआ आवास योजना का विवरण</a>
+                                        </li>
+
+                                        <li class="dropdown-submenu">
+                                            <a href="#">ग्राम सभा के तालाबों के पट्टे की प्रगति</a>
+                                            <ul class="dropdown-menu">
+
+                                                <li>
+                                                    <a href="<%=ResolveUrl("~/MPR/PondProgressPart_I.aspx")%>">ग्राम सभा के तालाबों के पट्टे की प्रगति प्रारूप-1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<%=ResolveUrl("~/MPR/PondProgressPart_II.aspx")%>">ग्राम सभा के तालाबों के पट्टे की प्रगति प्रारूप-2</a>
+                                                </li>
+                                            </ul>
+                                            <!-- end dropdown-menu -->
+                                        </li>
+                                        <%--   <li>
+                                            <a href="#">विभागीय मत्स्य प्रक्षेत्रों से मत्स्य बीज उत्पादन/व्यय/आय का विवरण</a>
+                                        </li>
+                                         <li>
+                                            <a href="<%=ResolveUrl("~/MPR/frm_SeedDistribution.aspx")%>">समस्त श्रोतों से (अंगुलिका) मत्स्य बीज वितरण की सूचना</a>
+                                        </li>--%>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/frmDeptGradePondNistarn.aspx")%>">विभागीय श्रेंणी 1,2,3,4 के जलाशय एवं श्रेणी 5 के निस्तारण की प्रगति</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/MSR_PhyEvent.aspx")%>">मत्स्य कार्यक्रम की मासिक भौतिक एवं वित्तीय प्रगति सूचना</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/KCC_ProgressDetail.aspx")%>">किसान क्रेडिट कार्ड योजना की प्रगति की सूचना</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MPR/frm_AdarshGramYojna.aspx")%>">सांसद आदर्श ग्राम योजना अन्तर्गत चयनित ग्रामों की कार्य की सूचना</a>
+                                        </li>
+
+                                    </ul>
+                                    <!-- end dropdown-menu -->
+                                </li>
+                                <%--<li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">MIS Report<b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=20&FR=1")%>">नीली क्रांति योजना</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/CriteriaFormScheme.aspx?RptKey=1&FR=1")%>">नीली क्रांति योजना - स्कीम स्तर</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/CriteriaFormScheme.aspx?RptKey=2&FR=1")%>">राष्ट्रीय कृषि विकास योजना - स्कीम स्तर</a>
+                                        </li>
+                                         <li>
+                                            <a href="<%=ResolveUrl("~/MIS/CriteriaFormScheme.aspx?RptKey=10&FR=1&ST=1")%>">नीली क्रांति योजना </a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/CriteriaFormScheme.aspx?RptKey=10&FR=1&ST=2")%>">राष्ट्रीय कृषि विकास योजना </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">तालाब उत्पादन मत्स्य विकास</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">मछुआ आवास योजना</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">मछुआ दुर्घटना योजनान्तर्गत पंजीकरण</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/District/wf_criteria.aspx?RptKey=2&FR=1")%>">मत्स्य भौतिक कार्यक्रम सांख्यकीय रिपोर्ट</a>
+                                        </li>
+                                         <li>
+                                            <a href="<%=ResolveUrl("~/MIS/CriteriaFormScheme.aspx?RptKey=11&FR=1")%>">नीलाम जलाशयों का विवरण</a>
+                                        </li>
+                                         <li>
+                                            <a href="<%=ResolveUrl("~/MIS/CriteriaFormScheme.aspx?RptKey=12&FR=1")%>">समस्त श्रोतों से मतस्य उत्पादन रिपोर्ट</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/CriteriaFormScheme.aspx?RptKey=13&FR=1")%>">ग्राम समाज तालाबों की प्रगति प्रपत्र-1</a>
+                                        </li>
+                                    </ul>
+                                    <!-- end dropdown-menu -->
+                                </li>--%>
+
+                                <li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">MIS Report<b class="caret"></b></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=14&FR=1")%>">नीली क्रांति योजना</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=17&FR=1")%>">राष्ट्रीय कृषि विकास योजना</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=3&FR=1")%>">समस्त श्रोतों से अनुमानित मत्स्य उत्पादन रिपोर्ट</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=15&FR=1")%>">समस्त श्रोतों से मत्स्य बीज वितरण</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=16&FR=1")%>">समस्त श्रोतों से मत्स्य बीज संचय</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=4&FR=1")%>">मछुआ आवास योजना की वर्षवार भौतिक एवं वित्तीय प्रगति</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/CriteriaFormScheme.aspx?RptKey=11&FR=1")%>">नीलाम जलाशय का विवरण</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=10&FR=1")%>">ग्राम सभा के तालाबों के पट्टे की प्रगति - प्रारूप-1</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=11&FR=1")%>">ग्राम सभा के तालाबों के पट्टे की प्रगति - प्रारूप-2</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=13&FR=1")%>">मत्स्य भौतिक कार्यक्रम सांख्यकीय रिपोर्ट</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=18&FR=1")%>">किसान क्रेडिट कार्ड योजना की प्रगति रिपोर्ट</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=19&FR=1")%>">विभागीय श्रेणी 1,2,3,4 के जलाशय एवं श्रेणी-5 के निस्तारित की प्रगति </a>
+                                        </li>
+
+                                    </ul>
+                                    <!-- end dropdown-menu -->
+                                </li>
+                                <li>
+                                    <a href="#">Change Password </a>
+                                </li>
+                                <li>
+                                    <a href="../Default.aspx">Logout </a>
+                                </li>
+
+
+                                <!-- end standard drop down -->
+                            </ul>
+                            <!-- end nav navbar-nav -->
+                        </div>
+                        <!-- end #navbar-collapse-1 -->
+                    </nav>
+                    <!-- end navbar navbar-default megamenu -->
+                </div>
+            </header>
+            <!--===================================================-->
+            <!--END NAVBAR-->
+
+            <div class="boxed">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <!-- FOOTER -->
+            <!--===================================================-->
+            <footer id="footer">
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="hide-fixed pull-right pad-rgt">Designed & Developed By <a href="#">Marg Software Solutions</a> </div>
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <p class="pad-lft">&#0169; 2018 Fisheries Department, Government of Uttar Pradesh</p>
+            </footer>
+            <!--===================================================-->
+            <!-- END FOOTER -->
+            <!-- SCROLL TOP BUTTON -->
+            <!--===================================================-->
+            <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+            <!--===================================================-->
+        </form>
+    </div>
+
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+    <!--jQuery [ REQUIRED ]-->
+    <script src="<%=ResolveUrl("~/js/jquery-2.1.1.min.js") %>"></script>
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="<%=ResolveUrl("~/js/bootstrap.min.js") %>"></script>
+    <!--Fast Click [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/fast-click/fastclick.min.js") %>"></script>
+    <!--Jquery Nano Scroller js [ REQUIRED ]-->
+    <script src="<%=ResolveUrl("~/plugins/nanoscrollerjs/jquery.nanoscroller.min.js") %>"></script>
+    <!--Metismenu js [ REQUIRED ]-->
+    <script src="<%=ResolveUrl("~/plugins/metismenu/metismenu.min.js") %>"></script>
+    <!--Switchery [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/switchery/switchery.min.js") %>"></script>
+    <!--Jquery Steps [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/parsley/parsley.min.js") %>"></script>
+    <!--Jquery Steps [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/jquery-steps/jquery-steps.min.js") %>"></script>
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-select/bootstrap-select.min.js") %>"></script>
+    <!--Bootstrap Wizard [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js") %>"></script>
+    <!--Masked Input [ OPTIONAL ]-->
+    <!--Bootstrap Timepicker [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js") %>"></script>
+    <!--Bootstrap Datepicker [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-datepicker/bootstrap-datepicker.js") %>"></script>
+
+    <script src="<%=ResolveUrl("~/plugins/masked-input/bootstrap-inputmask.min.js") %>"></script>
+    <!--Bootstrap Validator [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/bootstrap-validator/bootstrapValidator.min.js") %>"></script>
+    <!--Flot Chart [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.resize.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.spline.js") %>"></script>
+    <script src="<%=ResolveUrl("~/plugins/moment/moment.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/plugins/moment-range/moment-range.js") %>"></script>
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.tooltip.min.js") %>"></script>
+    <!--Flot Order Bars Chart [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/flot-charts/jquery.flot.categories.js") %>"></script>
+    <!--DataTables [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/datatables/media/js/jquery.dataTables.js") %>"></script>
+    <script src="<%=ResolveUrl("~/plugins/datatables/media/js/dataTables.bootstrap.js") %>"></script>
+    <script src="<%=ResolveUrl("~/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js") %>"></script>
+    <!--Morris.js [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/morris-js/morris.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/plugins/morris-js/raphael-js/raphael.min.js") %>"></script>
+    <!--Easy Pie Chart [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/easy-pie-chart/jquery.easypiechart.min.js") %>"></script>
+    <!--Fullscreen jQuery [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/screenfull/screenfull.js") %>"></script>
+    <!--Form Wizard [ SAMPLE ]-->
+    <script src="<%=ResolveUrl("~/js/demo/index.js") %>"></script>
+    <!--Form Wizard [ SAMPLE ]-->
+    <script src="<%=ResolveUrl("~//js/demo/wizard.js") %>"></script>
+    <!--Form Wizard [ SAMPLE ]-->
+    <script src="<%=ResolveUrl("~/js/demo/form-wizard.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/demo/tables-datatables.js") %>"></script>
+    <!--Chosen [ OPTIONAL ]-->
+    <script src="<%=ResolveUrl("~/plugins/chosen/chosen.jquery.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/demo/form-component.js")%>"></script>
+
+    <!--Form Loader-->
+    <script src="<%=ResolveUrl("~/js/demo/jquery.Wload.js") %>"></script>
+</body>
+</html>
