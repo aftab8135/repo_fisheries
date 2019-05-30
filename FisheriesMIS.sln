@@ -3,20 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FisheriesMIS(9)", "http://localhost:32314", "{1FC1957B-B127-40D9-A50C-C09BB64A91FE}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FisheriesMIS(11)", "http://localhost:9037", "{8455891A-BF65-4433-BA8B-825F3AD9DCDC}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_32314"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_9037"
 		Debug.AspNetCompiler.PhysicalPath = "..\FisheriesMIS\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_32314\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9037\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_32314"
+		Release.AspNetCompiler.VirtualPath = "/localhost_9037"
 		Release.AspNetCompiler.PhysicalPath = "..\FisheriesMIS\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_32314\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_9037\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
@@ -29,8 +29,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1FC1957B-B127-40D9-A50C-C09BB64A91FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FC1957B-B127-40D9-A50C-C09BB64A91FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8455891A-BF65-4433-BA8B-825F3AD9DCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8455891A-BF65-4433-BA8B-825F3AD9DCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

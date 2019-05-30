@@ -798,4 +798,30 @@ public partial class DBLayer
         else
             return true; 
     }
+
+
+    public  int ChangePassword(int userkey, string oldpassword, string newpassword)
+    {      
+        try
+        {
+            SqlParameter[] objParam = new SqlParameter[] { 
+                new SqlParameter("@UserKey",userkey),
+                new SqlParameter("@Currpwd",oldpassword),
+                new SqlParameter("@Newpwd",newpassword)
+
+                };
+
+            object obj = SqlHelper.ExecuteScalar(Constr, CommandType.StoredProcedure, "sp_ChangePassword", objParam);
+            if (obj == null)
+                return 0;
+            else
+                return Convert.ToInt32(obj);         
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+
 }

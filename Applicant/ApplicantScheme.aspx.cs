@@ -17,7 +17,7 @@ public partial class Applicant_ApplicantScheme : System.Web.UI.Page
     {
         if (Session["ApplicantKey"] == null)
         {
-            Response.Redirect("~/Secure/Login/ApplicantLogin.aspx");
+            Response.Redirect("~/Secure/Login/frm_ApplicantLogin.aspx");
         }
         else
         {

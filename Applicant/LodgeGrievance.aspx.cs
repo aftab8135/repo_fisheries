@@ -53,7 +53,7 @@ public partial class Applicant_LodgeGrievance : System.Web.UI.Page
         {
             if (mobileNo != "" && mobileNo.Length == 10)
             {
-                GlobalFunctions.SendSMSN("Dear " + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(complainerName.ToLower()) + ", Your Grievance Has been Registered Successfully.  Grievance No: " + complainNo + " You can track your status on http://www.gidagkp.org/", mobileNo);
+                GlobalFunctions.SendSMSN("Dear " + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(complainerName.ToLower()) + ", Your Grievance Has been Registered Successfully.  Grievance No: " + complainNo + " You can track your status on http://www.fisheriesmis.data-center.co.in/", mobileNo);
             }
         }
         if (chkEmail.Checked)
@@ -64,13 +64,13 @@ public partial class Applicant_LodgeGrievance : System.Web.UI.Page
                 body += "*******This is an automated message. Please do not reply*******<br/><br/>";
                 body += "<b> Dear Applicant,<br/><br/><span style='color:#0094ff'>Mr. /Mrs. " + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(complainerName.ToLower()) + "</span>,</b><br/><br/>";
 
-                body += "Your Grievance has been registered successfully. Please Note down Your Grievance Number <span style='color:red'> <b>" + complainNo + "</span></b><br/>  for Future communication with GIDA Department.<br/>";
-                body += "<br/>You can track your grievance status on  <span style='color:blue'><b> http://www.gidagkp.org/ </b></span>.<br/><br/>";
+                body += "Your Grievance has been registered successfully. Please Note down Your Grievance Number <span style='color:red'> <b>" + complainNo + "</span></b><br/>  for Future communication with Fisheries Department.<br/>";
+                body += "<br/>You can track your grievance status on  <span style='color:blue'><b> http://www.fisheriesmis.data-center.co.in/ </b></span>.<br/><br/>";
                 body += "With Regards,<br/><br/> <b>GIDA, Gorakhpur </b> <br/>( Uttar Pradesh )";
                 body += "<br/>";
                 body += "<br/>";
 
-                GlobalFunctions.SendMail(emaild, body, "GIDA Grievances Registration intimation");
+                GlobalFunctions.SendMail(emaild, body, "Fisheries Grievances Registration intimation");
             }
         }
     }

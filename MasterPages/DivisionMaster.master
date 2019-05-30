@@ -88,7 +88,7 @@
                                 <!-- User dropdown menu -->
                                 <ul class="head-list">
                                     <li>
-                                        <a href="#"><i class="fa fa-envelope fa-fw"></i>पासवर्ड बदलें </a>
+                                       <a href="<%=ResolveUrl("~/Secure/Login/ChangePassword.aspx")%>"><i class="fa fa-envelope fa-fw"></i>पासवर्ड बदलें </a>
                                     </li>
                                     <li>
                                         <a href="<%=ResolveUrl("~/Default.aspx")%>"><i class="fa fa-sign-out fa-fw"></i>लॉगआउट </a>
@@ -225,7 +225,7 @@
                                 <!-- end dropdown-menu -->
                             </li>
                             <li>
-                                <a href="#">Change Password </a>
+                                 <a href="../../Manual/User_Manual_Department_Panel.pdf" target="_blank">Download Manual</a>
                             </li>
                             <li>
                                 <a href="<%=ResolveUrl("~/Default.aspx")%>"><i class="fa fa-sign-out fa-fw"></i>Logout </a>

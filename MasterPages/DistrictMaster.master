@@ -92,7 +92,7 @@
                                     <!-- User dropdown menu -->
                                     <ul class="head-list">
                                         <li>
-                                            <a href="#"><i class="fa fa-envelope fa-fw"></i>पासवर्ड बदलें </a>
+                                            <a href="<%=ResolveUrl("~/Secure/Login/ChangePassword.aspx")%>"><i class="fa fa-envelope fa-fw"></i>पासवर्ड बदलें </a>
                                         </li>
                                         <li>
                                             <a href="<%=ResolveUrl("~/Default.aspx") %>"><i class="fa fa-sign-out fa-fw"></i>लॉगआउट </a>
@@ -153,9 +153,9 @@
                                         <li>
                                             <a href="../../DBT/District/frm_Report.aspx">रिपोर्ट</a>
                                         </li>
-                                        <li>
+                                      <%--  <li>
                                             <a href="../../DBT/District/frm_DocumentUpdate.aspx">अपडेट डॉक्यूमेंट</a>
-                                        </li>
+                                        </li>--%>
                                     </ul>
                                     <!-- end dropdown-menu -->
                                 </li>
@@ -318,9 +318,9 @@
                                     </ul>
                                     <!-- end dropdown-menu -->
                                 </li>
-                                <li>
-                                    <a href="#">Change Password </a>
-                                </li>
+                               <li>
+                                <a href="../../Manual/User_Manual_Department_Panel.pdf" target="_blank">Download Manual</a>
+                            </li>
                                 <li>
                                      <a href="<%=ResolveUrl("~/Default.aspx")%>"><i class="fa fa-sign-out fa-fw"></i>Logout </a>
                                 </li>

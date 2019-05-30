@@ -88,7 +88,7 @@
                                 <!-- User dropdown menu -->
                                 <ul class="head-list">
                                     <li>
-                                        <a href="#"><i class="fa fa-envelope fa-fw"></i>पासवर्ड बदलें </a>
+                                        <a href="<%=ResolveUrl("~/Secure/Login/ChangePassword.aspx")%>"><i class="fa fa-envelope fa-fw"></i>पासवर्ड बदलें </a>
                                     </li>
                                     <li>
                                       
@@ -113,7 +113,7 @@
                     <div id="defaultmenu" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="../../DBT/HeadQuarter/Dashboard.aspx">Dashboard </a>
+                                <a href="../../dashboard/fishereismisdashboard.aspx" target="_blank">Dashboard </a>
                             </li>
                             <li>
                                 <a href="<%=ResolveUrl("~/HO/SchemeStatus.aspx")%>">Scheme</a>
@@ -130,9 +130,9 @@
                                     <li>
                                         <a href="../../../DBT/HeadQuarter/Report.aspx">रिपोर्ट</a>
                                     </li>
-                                    <li>
+                                   <%-- <li>
                                         <a href="../../../DBT/HeadQuarter/DocumentVerificationReport.aspx">डॉक्यूमेंट वेरिफिकेशन रिपोर्ट </a>
-                                    </li>
+                                    </li>--%>
                                 </ul>
                                 <!-- end dropdown-menu -->
                             </li>
@@ -199,7 +199,7 @@
                                 <!-- end dropdown-menu -->
                             </li>
                             <li>
-                                <a href="#">Change Password </a>
+                                <a href="../../Manual/User_Manual_Department_Panel.pdf" target="_blank">Download Manual</a>
                             </li>
                             <li>
                                 <a href="<%=ResolveUrl("~/Default.aspx")%>"><i class="fa fa-sign-out fa-fw"></i>Logout </a>
