@@ -23,7 +23,7 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
 
     protected void Page_PreInit(object sender, EventArgs e)
     {
-        if ( Session["FinancialYear"] == null)
+        if (Session["FinancialYear"] == null)
         {
             Response.Redirect("~/Secure/Login/frm_Login.aspx");
         }
@@ -67,7 +67,7 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
         {
             Int16 RptType = Convert.ToInt16(Request.QueryString["RptKey"]);
             Int16 MonthKey = Convert.ToInt16(Request.QueryString["MonthKey"]);
-           
+
             Int32 CateKey = Convert.ToInt32(Request.QueryString["CateKey"]);
             Int32 FR = Convert.ToInt32(Request.QueryString["FR"]);
 
@@ -79,20 +79,35 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
 
             if (RptType == 1)
             {
+                string rptname = "";
+                string querytype = "";
                 //नीली क्रांति योजना - मण्डलवार
                 DataTable dt = new DataTable();
                 DBLayer objDb = new DBLayer();
-                dt = objDb.GetRpt_BlueRevolution("HQ_DIV", FinancialYear, MonthKey, DivisionKey, DistrictKey);
+                if (FR == 2)
+                {
+                    querytype = "HQ_DIS";
+                    dt = objDb.GetRpt_BlueRevolution(querytype, FinancialYear, MonthKey, DivisionKey, DistrictKey);
+                    rptname = "rptBlueRevolution_District.rpt";
+
+                }
+                else
+                {
+                    querytype = "HQ_DIV";
+                    dt = objDb.GetRpt_BlueRevolution(querytype, FinancialYear, MonthKey, DivisionKey, DistrictKey);
+                    rptname = "rptBlueRevolution_Division.rpt";
+                }
+
 
                 if (dt.Rows.Count > 0)
                 {
                     string connString = ConfigurationManager.ConnectionStrings["ConnectionStr"].ConnectionString;
                     SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder(connString);
 
-                    ObjRpt.Load(MapPath(RptPath + "rptBlueRevolution_Division.rpt"));
+                    ObjRpt.Load(MapPath(RptPath + rptname));
                     ObjRpt.SetDatabaseLogon(connStringBuilder.UserID, connStringBuilder.Password, connStringBuilder.DataSource, connStringBuilder.InitialCatalog);
                     ObjRpt.SetDataSource(dt);
-                    ObjRpt.SetParameterValue("QueryType", "HQ_DIV");
+                    ObjRpt.SetParameterValue("QueryType", querytype);
                     ObjRpt.SetParameterValue("FinYear", FinancialYear);
                     ObjRpt.SetParameterValue("MonthId", MonthKey);
                     ObjRpt.SetParameterValue("DistrictKey", DistrictKey);
@@ -110,21 +125,37 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
             }
             else if (RptType == 2)
             {
+                string rptname = "";
+                string querytype = "";
                 //राष्ट्रीय कृषि विकास योजना  - मण्डलवार
                 DataTable dt = new DataTable();
                 DBLayer objDb = new DBLayer();
-                dt = objDb.GetRpt_RKVY("HQ_DIV", FinancialYear, MonthKey, DivisionKey, DistrictKey);
+
+                if (FR == 2)
+                {
+                    querytype = "HQ_DIS";
+                    dt = objDb.GetRpt_RKVY(querytype, FinancialYear, MonthKey, DivisionKey, DistrictKey);
+                    rptname = "rptRKVY_District.rpt";
+
+                }
+                else
+                {
+                    querytype = "HQ_DIV";
+                    dt = objDb.GetRpt_RKVY(querytype, FinancialYear, MonthKey, DivisionKey, DistrictKey);
+                    rptname = "rptRKVY_Division.rpt";
+                }
+               
 
                 if (dt.Rows.Count > 0)
                 {
                     string connString = ConfigurationManager.ConnectionStrings["ConnectionStr"].ConnectionString;
                     SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder(connString);
 
-                    ObjRpt.Load(MapPath(RptPath + "rptRKVY_Division.rpt"));
+                    ObjRpt.Load(MapPath(RptPath + rptname));
                     ObjRpt.SetDatabaseLogon(connStringBuilder.UserID, connStringBuilder.Password, connStringBuilder.DataSource, connStringBuilder.InitialCatalog);
                     ObjRpt.SetDataSource(dt);
 
-                    ObjRpt.SetParameterValue("QueryType", "HQ_DIV");
+                    ObjRpt.SetParameterValue("QueryType", querytype);
                     ObjRpt.SetParameterValue("FinYear", FinancialYear);
                     ObjRpt.SetParameterValue("MonthId", MonthKey);
                     ObjRpt.SetParameterValue("DistrictKey", DistrictKey);
@@ -234,7 +265,7 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
                 //    CRViewer.ReportSource = ObjRpt;
                 //    CRViewer.RefreshReport();
 
-                    // ObjRpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "MSR_MachuaAwasMonthlyProgress");
+                // ObjRpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "MSR_MachuaAwasMonthlyProgress");
 
                 //}
                 //else
@@ -409,7 +440,7 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
             }
             else if (RptType == 11)
             {
-               // ग्राम सभा के तालाबों के पट्टे की प्रगति - प्रारूप-2
+                // ग्राम सभा के तालाबों के पट्टे की प्रगति - प्रारूप-2
                 DataTable dt = new DataTable();
                 DBLayer objDb = new DBLayer();
                 dt = objDb.GetRptPondProgressPartSecond(FinancialYear, MonthKey, DivisionKey, DistrictKey);
@@ -588,7 +619,7 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
                     CRViewer.ReportSource = ObjRpt;
                     CRViewer.RefreshReport();
 
-                     ObjRpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "SeedStockReport");
+                    ObjRpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "SeedStockReport");
                 }
             }
             else if (RPTKey == 17)
@@ -639,7 +670,7 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
                     ObjRpt.SetDatabaseLogon(connStringBuilder.UserID, connStringBuilder.Password, connStringBuilder.DataSource, connStringBuilder.InitialCatalog);
                     ObjRpt.SetDataSource(dt);
 
-                   // ObjRpt.SetParameterValue("QueryType", "HQ_DIS");
+                    // ObjRpt.SetParameterValue("QueryType", "HQ_DIS");
                     ObjRpt.SetParameterValue("FinYear", FinancialYear);
                     ObjRpt.SetParameterValue("MonthId", MonthKey);
                     ObjRpt.SetParameterValue("DistrictKey", DistrictKey);

@@ -112,10 +112,12 @@
                     dataType: "json",
                     success: function (r) {
                         if (r.d == "1") {
-                            window.open("wf_ReportViewer.aspx?RptKey=1&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DVKEY=" + DivKey + "", '_blank');
+                          //  window.open("wf_ReportViewer.aspx?RptKey=1&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DVKEY=" + DivKey + "", '_blank');
+                            window.open("wf_ReportViewer.aspx?RptKey=1&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DSKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 1 ? parseInt("<%=Convert.ToInt32(Session["DistrictKey"])%>") : DisKey) + "&DVKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 2 ? parseInt("<%=Convert.ToInt32(Session["DivisionKey"])%>") : DivKey) + "", '_blank');
                         }
                         else if (r.d == "2") {
-                            window.open("wf_ReportViewer.aspx?RptKey=2&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DVKEY=" + DivKey + "", '_blank');
+                          //  window.open("wf_ReportViewer.aspx?RptKey=2&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DVKEY=" + DivKey + "", '_blank');
+                            window.open("wf_ReportViewer.aspx?RptKey=2&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DSKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 1 ? parseInt("<%=Convert.ToInt32(Session["DistrictKey"])%>") : DisKey) + "&DVKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 2 ? parseInt("<%=Convert.ToInt32(Session["DivisionKey"])%>") : DivKey) + "", '_blank');
                         }
                         else if (r.d == "3") {
                             window.open("wf_ReportViewer.aspx?RptKey=3&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DSKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 1 ? parseInt("<%= Convert.ToInt32(Session["DistrictKey"])%>") : DisKey) + "&DVKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 2 ? parseInt("<%=Convert.ToInt32(Session["DivisionKey"])%>") : DivKey) + "", '_blank');
