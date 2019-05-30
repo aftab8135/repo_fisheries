@@ -168,13 +168,16 @@
                         else if (r.d == "19") {
                             window.open("wf_ReportViewer.aspx?RptKey=19&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DSKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 1 ? parseInt("<%=Convert.ToInt32(Session["DistrictKey"])%>") : DisKey) + "&DVKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 2 ? parseInt("<%=Convert.ToInt32(Session["DivisionKey"])%>") : DivKey) + "", '_blank');
                         }
+                        else if (r.d == "20") {
+                            window.open("wf_ReportViewer.aspx?RptKey=20&FR=<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>&MonthKey=" + MonthId + "&DSKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 1 ? parseInt("<%=Convert.ToInt32(Session["DistrictKey"])%>") : DisKey) + "&DVKEY=" + (parseInt("<%=Convert.ToInt32(HttpContext.Current.Session["FR"])%>") == 2 ? parseInt("<%=Convert.ToInt32(Session["DivisionKey"])%>") : DivKey) + "", '_blank');
+                        }
                         else {
                             alert('Wrong Option Selection.');
                         }
                     }
                 });
-}
-}
+            }
+        }
 
 function getDistrictName() {
     var DivKey = $("#ddlDivisionName").val();

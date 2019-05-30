@@ -687,6 +687,38 @@ public partial class Report_District_wf_ReportViewer : System.Web.UI.Page
                     ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "info alert", "alert('No Record Found.'); window.history.go(-1);", true);
                 }
             }
+            else if (RPTKey == 20)
+            {
+                //सांसद आदर्श ग्राम योजना अन्तर्गत चयनित ग्रामों की कार्य की रिपोर्ट
+                DataTable dt = new DataTable();
+                DBLayer objDb = new DBLayer();
+                dt = objDb.GetRpt_SansadAdarshGramYojnaDetails("HQ", FinancialYear, MonthKey, DivisionKey, DistrictKey);
+
+                if (dt.Rows.Count > 0)
+                {
+                    string connString = ConfigurationManager.ConnectionStrings["ConnectionStr"].ConnectionString;
+                    SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder(connString);
+
+                    ObjRpt.Load(MapPath(RptPath + "rpt_SansadAdarshGramYojnaDetails.rpt"));
+                    ObjRpt.SetDatabaseLogon(connStringBuilder.UserID, connStringBuilder.Password, connStringBuilder.DataSource, connStringBuilder.InitialCatalog);
+                    ObjRpt.SetDataSource(dt);
+
+                    // ObjRpt.SetParameterValue("QueryType", "HQ_DIS");
+                    ObjRpt.SetParameterValue("FinYear", FinancialYear);
+                    ObjRpt.SetParameterValue("MonthId", MonthKey);
+                    ObjRpt.SetParameterValue("DistrictKey", DistrictKey);
+                    ObjRpt.SetParameterValue("DivisionKey", DivisionKey);
+
+                    CRViewer.ReportSource = ObjRpt;
+                    CRViewer.RefreshReport();
+
+                    // ObjRpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "MSR_BlueRevolution_District");
+                }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "info alert", "alert('No Record Found.'); window.history.go(-1);", true);
+                }
+            }
             else
             {
 

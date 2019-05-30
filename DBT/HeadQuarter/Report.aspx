@@ -117,7 +117,7 @@
             if (schemeKey > 0 && progressKey > 0 && insKey > 0) {
                 //This to be change according work type and Installment Key in DB.
 
-                if (insKey == 1 || insKey == 4) {
+                if (progressKey == 1) {
                     $('#pnlDetail').show();
                     $('#tblFirst').show();
                     $('#tblSecond').hide();
@@ -195,7 +195,7 @@
 
 
                 }
-                else if (insKey == 2 || insKey == 5) {
+                else if (progressKey == 2) {
                     $('#pnlDetail').show();
                     $('#tblFirst').hide();
                     $('#tblSecond').show();
@@ -266,7 +266,7 @@
                     });
 
                 }
-                else if (insKey == 3 || insKey == 6) {
+                else if (progressKey == 3) {
                     $('#pnlDetail').show();
                     $('#tblFirst').hide();
                     $('#tblSecond').hide();

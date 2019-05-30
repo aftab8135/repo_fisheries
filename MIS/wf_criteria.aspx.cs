@@ -196,6 +196,14 @@ public partial class Report_District_wf_criteria : System.Web.UI.Page
                 lblHomeHeading.Text = "विभागीय श्रेणी 1,2,3,4 के जलाशय एवं श्रेणी-5 के निस्तारित की प्रगति";
                 lblTitle.Text = "विभागीय श्रेणी 1,2,3,4 के जलाशय एवं श्रेणी-5 के निस्तारित की प्रगति";
                 break;
+            case 20:
+                lblFinYear.Text = FinYear;
+                lblLoginType.Text = UserName;
+                lblHeading.Text = "सांसद आदर्श ग्राम योजना अन्तर्गत चयनित ग्रामों की कार्य की रिपोर्ट";
+                lblHomeHeading.Text = "सांसद आदर्श ग्राम योजना अन्तर्गत चयनित ग्रामों की कार्य की रिपोर्ट";
+                lblTitle.Text = "सांसद आदर्श ग्राम योजना अन्तर्गत चयनित ग्रामों की कार्य की रिपोर्ट";
+                break;
+
             default:
                 lblFinYear.Text = FinYear;
                 lblLoginType.Text = UserName;
@@ -275,11 +283,11 @@ public partial class Report_District_wf_criteria : System.Web.UI.Page
         {
             if (RPTKey == 1)
             {
-                rt= "1";
+                rt = "1";
             }
             else if (RPTKey == 2)
             {
-                rt= "2";
+                rt = "2";
             }
             else if (RPTKey == 3)
             {
@@ -348,6 +356,10 @@ public partial class Report_District_wf_criteria : System.Web.UI.Page
             else if (RPTKey == 19)
             {
                 rt = "19";
+            }
+            else if (RPTKey == 20)
+            {
+                rt = "20";
             }
             return rt;
         }

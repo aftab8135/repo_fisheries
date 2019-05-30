@@ -52,7 +52,7 @@ public partial class Division_DBTBillList : System.Web.UI.Page
         {
             DBLayer objDBLayer = new DBLayer();
             int kk = objDBLayer.Update_DBTToken(TokenNo, DBTDate, UserKey, billforwardingkey);
-            if (kk == 1)
+            if (kk > 0)
             {
                 strMsg = "टोकन संख्या सत्यापित हो गयी है|";
             }

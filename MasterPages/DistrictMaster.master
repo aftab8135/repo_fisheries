@@ -312,7 +312,9 @@
                                         <li>
                                             <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=19&FR=1")%>">विभागीय श्रेणी 1,2,3,4 के जलाशय एवं श्रेणी-5 के निस्तारित की प्रगति </a>
                                         </li>
-
+                                           <li>
+                                        <a href="<%=ResolveUrl("~/MIS/wf_criteria.aspx?RptKey=20&FR=1")%>">सांसद आदर्श ग्राम योजना अन्तर्गत चयनित ग्रामों की कार्य की रिपोर्ट </a>
+                                    </li>
                                     </ul>
                                     <!-- end dropdown-menu -->
                                 </li>
@@ -320,7 +322,7 @@
                                     <a href="#">Change Password </a>
                                 </li>
                                 <li>
-                                    <a href="../Default.aspx">Logout </a>
+                                     <a href="<%=ResolveUrl("~/Default.aspx")%>"><i class="fa fa-sign-out fa-fw"></i>Logout </a>
                                 </li>
 
 

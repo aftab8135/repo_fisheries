@@ -173,7 +173,7 @@
                                 $('#chkAgreeStatus').attr('checked', false);
                                 $('#hidBillForwardingKey').val('');
                                 $("#DBTStatusModal").modal('hide');
-                                window.location.href = '../../DBT/Division/DBTBillList';
+                                window.location.href = '../../DBT/Division/DBTBillList.aspx';
                             }
                         });
                     }
@@ -199,7 +199,7 @@
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <!--End page title-->
         <div id="page-content">
-            <div id="frmDBTBillList"  class="form-horizontal">
+            <div id="frmDBTBillList" class="form-horizontal">
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -382,10 +382,18 @@
                 format: 'dd/mm/yyyy',
                 autoclose: true,
                 todayHighlight: true
-            }).on('changeDate', function (e) {
-                // Revalidate the date field
-                $('#frmDBTStatus').data('bootstrapValidator').revalidateField('DBTDate');
-            });;
+            })
+            //    .on('changeDate', function (e) {
+            //    // Revalidate the date field
+            //    //$('#frmDBTStatus').data('bootstrapValidator').revalidateField('DBTDate');
+            //    $('#frmDBTStatus').bootstrapValidator('revalidateField', $('DBTDate'));
+            //});;
+
+       .on('changeDate', function (e) {
+           // Revalidate the date when user change it
+           $('#frmDBTStatus').bootstrapValidator('revalidateField', 'DBTDate');
+           isValid = true;
+       });
         });
 
     </script>

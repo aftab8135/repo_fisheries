@@ -180,7 +180,7 @@
                                 <a href="#">Change Password </a>
                             </li>--%>
                             <li>
-                               <a href="../Default.aspx">Logout </a>
+                                 <a href="<%=ResolveUrl("~/Default.aspx")%>"><i class="fa fa-sign-out fa-fw"></i>Logout </a>
                             </li>
 
                             <li></li>

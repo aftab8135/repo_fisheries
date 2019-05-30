@@ -1,0 +1,19 @@
+D:\PROJECTS\Fisheries Cooperation\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.dll.config
+D:\PROJECTS\Fisheries Cooperation\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.dll
+D:\PROJECTS\Fisheries Cooperation\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.pdb
+D:\PROJECTS\Fisheries Cooperation\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.csprojResolveAssemblyReference.cache
+D:\PROJECTS\Fisheries Cooperation\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.dll
+D:\PROJECTS\Fisheries Cooperation\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.pdb
+C:\Users\Aftab Haider\Desktop\15-12-2018\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.dll.config
+C:\Users\Aftab Haider\Desktop\15-12-2018\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.dll
+C:\Users\Aftab Haider\Desktop\15-12-2018\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.pdb
+C:\Users\Aftab Haider\Desktop\15-12-2018\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.csprojResolveAssemblyReference.cache
+C:\Users\Aftab Haider\Desktop\15-12-2018\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.dll
+C:\Users\Aftab Haider\Desktop\15-12-2018\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.pdb
+D:\Sanjay\FisheriesMIS\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.dll.config
+D:\Sanjay\FisheriesMIS\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.dll
+D:\Sanjay\FisheriesMIS\FisheriesMIS\FisheriesMIS\bin\FisheriesMIS.pdb
+D:\Sanjay\FisheriesMIS\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.dll
+D:\Sanjay\FisheriesMIS\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.pdb
+D:\Sanjay\FisheriesMIS\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.csprojResolveAssemblyReference.cache
+D:\Sanjay\FisheriesMIS\FisheriesMIS\obj\Debug\FisheriesMIS.csprojResolveAssemblyReference.cache

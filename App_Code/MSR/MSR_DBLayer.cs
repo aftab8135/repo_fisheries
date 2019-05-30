@@ -1594,5 +1594,34 @@ public partial class DBLayer
      }
 
 
-     #endregion
+    #endregion
+
+
+    public DataTable GetRpt_SansadAdarshGramYojnaDetails(string QueryType, string FinYear, int MonthId, int DivisionKey = 0, int DistrictKey = 0)
+    {
+        DataTable dt = new DataTable();
+        try
+        {
+            if (FinYear != "" && MonthId > 0)
+            {
+                SqlParameter[] param = new SqlParameter[] {
+                    new SqlParameter("@FinYear",FinYear),
+                    new SqlParameter("@DivisionKey",DivisionKey),
+                    new SqlParameter("@DistrictKey",DistrictKey),
+                    new SqlParameter("@MonthId",MonthId),
+
+                };
+
+                SqlDataReader dr = SqlHelper.ExecuteReader(Constr, CommandType.StoredProcedure, "RPT_SansadAdarshGramYojnaDetails", param);
+                dt.Load(dr);
+                return dt;
+            }
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
+        return dt;
+    }
 }
